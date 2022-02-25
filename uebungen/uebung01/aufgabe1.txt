@@ -1,0 +1,28 @@
+Aufgabe 1
+==========
+
+Erzeuge für den nachfolgenden Quelltext ein
+	2.1. Programmablaufplan
+	2.2. Nassi-Shneiderman-Diagramm
+	2.3. Pseudocode
+	2.4. UML-Aktivitätsdiagramme
+
+Quelltext:
+----------	
+	
+	$i = 0;
+	$weiter = true;
+	
+	while ($weiter) {
+		$q = $i * $i;
+		echo $i . " * " . $i ." = " . $q ;
+		if ( $q > 1000 ) {
+			$weiter = false;
+		} else {
+			++$i;
+		}
+	}
+	
+3. Vergleiche die vier Ergebnisse und beschreibe die Vor- und Nachteile.	
+
+
