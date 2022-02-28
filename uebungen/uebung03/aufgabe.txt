@@ -1,0 +1,25 @@
+﻿Lagerverkauf in PHP
+===================
+
+Realisiere eine All-In-One-Seite in PHP mit dem Namen lagerverkauf.php
+
+Erstelle zwei Ausgangsvariablen für einen Lagerbestand von 1000 Stahl
+und eine für 5000 EUR und speichere sie in der Session ab
+(sofern die Daten noch nicht in der Session vorhanden sind)
+
+Zeige auf der Seite die Stahlmenge und den Kontostand an.
+
+Zeige ein Formular bei dem man die Menge und den Einzelpreis eingeben kann.
+
+Beim Absenden des Formulars sollen die Überprüfungen aus der Kapiland-Seite
+vorgenommen werden.
+Zeige bei Falscheingaben die entsprechenden Fehlermeldungen an.
+
+Bei erfolgreichem Verkauf wird der Kontostand entsprechend erhöht
+(abzüglich Verkaufsgebühr!) und der Lagerbestand verringert.
+Zeige dann eine Erfolgsmeldung an.
+
+Vergleiche Deine Entwicklungsfortschritte mit Deinem Pseudocode.
+
+Wenn die Seite fertig ist, speichere sie unter dem Namen "lager-<name>.php" 
+unter uebung03
