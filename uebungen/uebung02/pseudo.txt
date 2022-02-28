@@ -1,0 +1,27 @@
+"Verkauf von 500 Stahl über den Markt"
+
+Klick auf Firmengelände
+
+Klick auf Lager -> Anzeige Lagerbestand
+
+Eingabe Menge und Verkaufspreis
+
+Auf "versenden" klicken
+
+WENN Menge oder Preis gleich 0 DANN
+    Fehlermeldung anzeigen
+ELSE
+    Anzeige Verkaufsprovision
+    "ausführen" anklicken
+    WENN Provision größer Bargeldbestand DANN
+        Fehlermeldung anzeigen
+    SONST WENN Preis größer Grundstoff-Preis DANN
+        Fehlermeldung anzeigen
+    SONST
+        Erfolgsmeldung anzeigen
+        Lagerbestand wird um die verkaufte Menge reduziert
+    ENDE WENN
+ENDE WENN
+zurück zum Lager
+
+

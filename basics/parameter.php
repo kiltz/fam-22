@@ -1,7 +1,12 @@
 <?php
+session_start();
 $text = "";
+if (isset($_SESSION["text"])) {
+    $text = $_SESSION["text"];
+}
 if (isset($_REQUEST["text"])) {
     $text = $_REQUEST["text"];
+    $_SESSION["text"] = $text;
 }
 ?>
 <html>
@@ -13,7 +18,7 @@ if (isset($_REQUEST["text"])) {
 <body>
 <h2>PHP-Basic: Ein Parameter</h2>
 
-<form method="get">
+<form method="post">
     <input type="hidden" name="aktion" value="tuWas">
     <label>
         Text
