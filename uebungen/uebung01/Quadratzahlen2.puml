@@ -1,0 +1,14 @@
+@startuml
+(*) --> "$i = 0
+ $weiter = true"
+--> "$q = $i + $i"
+-->"Ausgabe Ergebnis"
+if "$q größer als 1000" then
+    -->[true] "weiter = false"
+    -->[Ending Process] (*)
+else
+    --> [false]"$i++"
+    -->"$q = $i + $i"
+endif
+'by Rene
+@enduml

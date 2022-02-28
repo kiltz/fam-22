@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+partition Initialisierung {
+:init Variable "i" mit 0;
+:init Variable "weiter" mit true;
+}
+partition Laufzeit {
+while (weiter) is (true)
+:Variable q = Quadrat aus i;
+:Ausgabe "i * i = q";
+    if (q > 1000) then (yes)
+    :weiter gleich "false";
+    else (no)
+    :Variable i = i + 1;
+    endif
+endwhile (false)
+}
+stop
+
+' by Daniel
+@enduml

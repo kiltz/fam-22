@@ -4,7 +4,7 @@
     <title>Datum und Zeit bei PHP</title>
 </head>
 <body>
-<h2>PHP-Basic: Ein Datum</h2>
+<h1>PHP-Basic: Ein Datum</h1>
 Heute ist der
 <?php
 /*

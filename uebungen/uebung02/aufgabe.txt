@@ -1,0 +1,15 @@
+Erstellt für den Anwendungsfall
+"Verkauf von 500 Stahl über den Markt"
+
+eine Textdatei mit der Darstellung des Weges und seiner Alternativen in Pseudocode.
+
+Speichere die Datei unter 
+	<name>.txt 
+ab und schicke sie an f@kiltz.de
+
+Erzeuge mit Plant-UML ein Aktivitätsdiagramm für diesen Anwendungsfall.
+
+Exportiere das Diagramm als Bild (<name>.png) und schicke es an f@kiltz.de
+
+Vergleiche die beiden Darstellungsformen und schreibe unter den Pseudocode eine 
+kurze Vor- und Nachteil-Liste.
