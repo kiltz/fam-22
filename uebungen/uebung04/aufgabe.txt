@@ -1,0 +1,9 @@
+Datenmodellierung
+=================
+
+Analysiere die mögliche Datenstruktur von KapiLand.
+
+Ermittle in einem mit PlantUML erstelltem Klassendiagramm mind. 6 Entitäten mit jeweils max. 5 Attributen und deren
+Beziehungen zueinander.
+
+Beachte dabei die ersten drei Normalformen.

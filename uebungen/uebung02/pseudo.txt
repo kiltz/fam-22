@@ -10,17 +10,15 @@ Auf "versenden" klicken
 
 WENN Menge oder Preis gleich 0 DANN
     Fehlermeldung anzeigen
-ELSE
+SONST WENN Provision größer Bargeldbestand DANN
+    Fehlermeldung anzeigen
+SONST WENN Preis größer Grundstoff-Preis DANN
+    Fehlermeldung anzeigen
+SONST
     Anzeige Verkaufsprovision
     "ausführen" anklicken
-    WENN Provision größer Bargeldbestand DANN
-        Fehlermeldung anzeigen
-    SONST WENN Preis größer Grundstoff-Preis DANN
-        Fehlermeldung anzeigen
-    SONST
-        Erfolgsmeldung anzeigen
-        Lagerbestand wird um die verkaufte Menge reduziert
-    ENDE WENN
+    Erfolgsmeldung anzeigen
+    Lagerbestand wird um die verkaufte Menge reduziert
 ENDE WENN
 zurück zum Lager
 
