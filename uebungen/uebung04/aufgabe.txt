@@ -7,3 +7,5 @@ Ermittle in einem mit PlantUML erstelltem Klassendiagramm mind. 6 Entitäten mit
 Beziehungen zueinander.
 
 Beachte dabei die ersten drei Normalformen.
+
+s. auch https://plantuml.com/de/class-diagram
