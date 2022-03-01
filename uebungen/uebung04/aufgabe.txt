@@ -9,3 +9,7 @@ Beziehungen zueinander.
 Beachte dabei die ersten drei Normalformen.
 
 s. auch https://plantuml.com/de/class-diagram
+
+Zeit bis 12:00 Uhr,
+    dann Mittagspause bis 12:45 Uhr
+    dann Besprechung der Ergebnisse.

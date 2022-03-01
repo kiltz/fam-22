@@ -1,0 +1,21 @@
+Erweiterung der Benutzerverwaltung
+==================================
+
+für Jedermann
+-------------
+1. Erweitere die ben/index.php darum, dass die weiteren Felder von der Benutzer-Tabelle abgefragt und gespeichert werden.
+2. Erweitert die Ausgabe der Benutzer um die weiteren Felder.
+
+3. Sorgt dafür, dass beim ersten Aufruf schon die Benutzerliste angezeigt wird.
+
+4. Baut bei der Benutzeliste einen Link zum löschen ein, wenn er geklickt wird, soll der Datensatz 
+	gelöscht werden (opt: mit Sicherheitsabfrage)
+
+	
+für die Schnellen
+-----------------
+5. Baut einen Link zum Ändern des Benutzers ein. Sorgt dafür, dass dann der Benutzer im Formular angezeigt wird 
+	und ihr ihn geändert speichern könnt.
+	
+Speichert das Ergebnis unter "uebung05\index-<name>.php" ab.
+
