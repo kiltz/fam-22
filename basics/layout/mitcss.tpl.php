@@ -16,10 +16,11 @@
 <div id="menue">
 	<h3>Menü</h3>
 	<ul>
-		<li><a href="index.php?seite=eins">Eins</a></li>
-		<li><a href="index.php?seite=zwei">Zwei</a></li>
+        <li><a href="index.php?seite=login">Login</a></li>
         <li><a href="index.php?seite=rechne">Rechner</a></li>
+        <li><a href="index.php?seite=benutzer">Benutzerverwaltung</a></li>
         <li><a href="index.php?seite=aufgabe">Aufgabe zum Layout</a></li>
+        <li><a href="index.php?seite=logout">Logout</a></li>
 	</ul>
 
 </div>

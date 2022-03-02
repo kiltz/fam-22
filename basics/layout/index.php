@@ -1,9 +1,10 @@
 <?php
+// Frontcontroller
 	session_start();
 	if (isset($_REQUEST["seite"])){
 		$seite = $_REQUEST["seite"];
 	} else {
-		$seite = "eins";
+		$seite = "login";
 	}
 	
 	if ($seite == "logout") {
@@ -11,7 +12,7 @@
 		// Variable löschen
 		$_SESSION["benutzer"] = null;
 	}
-	
+
 	// bei Bedarf Subcontroller einbinden
 	if (file_exists($seite."Controller.inc.php")) {
 		include($seite."Controller.inc.php");
@@ -19,6 +20,6 @@
 	
 	
 	
-include("standard.tpl.php");
-//include("mitcss.tpl.php");
+//include("standard.tpl.php");
+include("mitcss.tpl.php");
 ?>
