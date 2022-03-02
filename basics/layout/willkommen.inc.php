@@ -1,0 +1,1 @@
+Willkommen <?php echo $_SESSION["benutzer"] ?>!

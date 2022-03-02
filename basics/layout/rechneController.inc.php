@@ -1,5 +1,4 @@
-﻿
-<?php
+﻿<?php
 if (isset($_REQUEST["zahl1"])) {
 
 	$zahl1 = $_REQUEST["zahl1"];
@@ -13,6 +12,4 @@ if (isset($_REQUEST["zahl1"])) {
 	$zahl3 = "0";
 	$ergebnis = "0";
 }
-
 ?>
-

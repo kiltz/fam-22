@@ -16,7 +16,7 @@ if (!isset($meldung)) {
         <tr>
             <td>Passwort</td>
             <td>
-                <input type="text" name="passwort"/>
+                <input type="password" name="passwort"/>
             </td>
         </tr>
     </table>

@@ -16,11 +16,21 @@
 <div id="menue">
 	<h3>Menü</h3>
 	<ul>
-        <li><a href="index.php?seite=login">Login</a></li>
+        <?php
+        if (isset($_SESSION["benutzer"])) {
+            ?>
+            <li><a href="index.php?seite=benutzer">Benutzerverwaltung</a></li>
+            <li><a href="index.php?seite=logout">Logout</a></li>
+
+            <?php
+        } else {
+        ?>
+            <li><a href="index.php?seite=login">Login</a></li>
+        <?php
+        }
+        ?>
         <li><a href="index.php?seite=rechne">Rechner</a></li>
-        <li><a href="index.php?seite=benutzer">Benutzerverwaltung</a></li>
         <li><a href="index.php?seite=aufgabe">Aufgabe zum Layout</a></li>
-        <li><a href="index.php?seite=logout">Logout</a></li>
 	</ul>
 
 </div>
