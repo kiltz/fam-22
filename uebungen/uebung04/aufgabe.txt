@@ -10,6 +10,68 @@ Beachte dabei die ersten drei Normalformen.
 
 s. auch https://plantuml.com/de/class-diagram
 
-Zeit bis 12:00 Uhr,
-    dann Mittagspause bis 12:45 Uhr
-    dann Besprechung der Ergebnisse.
+
+Aufgabe: produzierende Gebäude
+
+Beispiel:
+-----------
+Gebäude: Plantage
+Gebiet: Mali
+
+Jeder Bau braucht folgende Baustoffe:
+100 Steine, 50 Stahl und 10 Holz.
+
+Typ: Rohstoff
+           Agrar    Rohstoff   Industrie
+Baukosten: 75.000 / 100.000 / 125.000 ¢
+Bauzeit: 5 Std.
+Baustoffe: 100 Steine 50 Stahl 10 Holz
+
+Mit diesem Gebäude kann man folgende Produkte herstellen:
+    Baumwolle
+    Getreide
+    Holz
+    Kaffeebohnen
+    Kakao
+    Kartoffeln
+    Kautschuk
+    Saatgut
+    Zuckerrohr
+
+Stammdaten:
+Tabelle/Entity : ProduzierendeGebaeude
+    ID              AutoIncrement Primärschlüssel (techn.)
+    Name            z.B. Plantage
+    Bauzeit         z.B. 5 Std.
+    BasisBaukosten  z.B. 75.000 (Baukosten für Agrarland)
+
+
+
+ID  Name        Bauzeit     BaukostenAgrar BaukostenRoh BaukostenIndustrie
+1   Plantage    5           75.000             100.000      125.000
+2   Treibhaus   10          90.000             120.000      150.000
+
+
+Regel:
+    - Baukosten Rohstoff = BaukostenAgrar + (BaukostenAgrar / 3)
+    - Baukosten Industrie = BaukostenAgrar + (BaukostenAgrar / 3 * 2)
+
+    - Baukosten sind Konstant: 100 Steine 50 Stahl 10 Holz
+
+Tabelle: Ware
+    ID                          z.B. 5
+    NAME                        z.B. Baumwolle
+    PRODUZIERENDE_GEBAEUDE_ID   z.B. 1
+
+
+
+
+Bewegungsdaten:
+Tabelle/Entity: Firmengelände
+    - Liste der produzierenden Geäude:
+        Pro Gebäude:
+            ID  1627288
+            Gebiet (Mali)
+            Arbeiter 1
+            Größe   20 m²
+            Referenz auf ProduzierendeGebaeude (Plantage)

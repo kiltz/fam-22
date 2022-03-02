@@ -15,8 +15,7 @@ CREATE TABLE IF NOT EXISTS `benutzer` (
 
 
 INSERT INTO `benutzer` (`id`, `vorname`, `name`, `firmenname`, `username`, `passwort`, `email`, `sitz`, `geschlecht`) VALUES
-(1, 'Friedrich', 'Kiltz', 'Mega Gmbh', 'tz', '*FE24531E81971859B9B0B3F09ADF4946A6AA47FB', 'f@kiltz.de', 'Deutschland', 'm'),
-(2, '', 'Niemand', '', 'irgendwas', '*FE24531E81971859B9B0B3F09ADF4946A6AA47FB', 'f@kiltz.de', '', '');
+(1, 'Friedrich', 'Kiltz', 'Mega Gmbh', 'tz', password('geheim'), 'f@kiltz.de', 'Deutschland', 'm');
 
 
 CREATE TABLE IF NOT EXISTS `bestandteile` (
@@ -33,12 +32,6 @@ INSERT INTO `bestandteile` (`id`, `ware_id`, `ware_teil_id`, `menge`) VALUES
 (2, 3, 2, 1),
 (3, 4, 2, 5),
 (4, 4, 3, 1);
-
-INSERT INTO `ware` (`id`, `name`, `preis`, `gebaude_id`) VALUES
-         (1, 'Strom', 0.03, 2),
-         (2, 'Wasser', 0.02, 1),
-         (3, 'Saatgut', 0.01, 3),
-         (4, 'Kartoffeln', 0.14, 3);
 
 
 CREATE TABLE IF NOT EXISTS `gebaeude` (
@@ -79,4 +72,10 @@ CREATE TABLE IF NOT EXISTS `ware` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
+
+INSERT INTO `ware` (`id`, `name`, `preis`, `gebaude_id`) VALUES
+                                                             (1, 'Strom', 0.03, 2),
+                                                             (2, 'Wasser', 0.02, 1),
+                                                             (3, 'Saatgut', 0.01, 3),
+                                                             (4, 'Kartoffeln', 0.14, 3);
 

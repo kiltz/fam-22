@@ -14,6 +14,7 @@
     <li><a href="rechne.php">Ein kleiner Rechner</a></li>
     <li><a href="nachricht.php">Formularverarbeitung</a></li>
     <li><a href="lager-Friedrich.php">Lagerverwaltung</a></li>
+    <li><a href="layout">Layout</a></li>
 
 </ul>
 

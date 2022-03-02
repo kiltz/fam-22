@@ -17,6 +17,7 @@ if (isset($_REQUEST["loeschId"])) {
     $sql = "delete from benutzer where id = ".$loeschId;
     $ergebnis = @mysqli_query($verbNr, $sql )
     or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
+    $meldung = "Benutzer mit ID $loeschId wurde gelöscht!";
 
 }
 // Aufruf per Formular?
@@ -39,7 +40,7 @@ if (isset($_REQUEST["username"])) {
 
 
 		$sql = "insert into benutzer (username, email, firmenname, passwort)
-              values ('$username','$email', '$firmenname', '$passwort');";
+              values ('$username','$email', '$firmenname', password('$passwort'));";
 		$ergebnis = @mysqli_query($verbNr, $sql )
 		or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
 
@@ -62,7 +63,7 @@ or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Benutzerverwaltung</title>
-		<link rel="STYLESHEET" type="text/css" href="../include/
+		<link rel="STYLESHEET" type="text/css" href="../../include/
 		formate.css">
 	</head>
 	<body>
@@ -107,7 +108,7 @@ or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($
 		<?php
 if (isset($ergebnis)) {
 ?>
-<table cellpadding="3">
+<table>
 <tr>
 	<th>ID</th>
     <th>Username</th>
@@ -127,7 +128,7 @@ if (isset($ergebnis)) {
         echo "<td>".$satz["email"]."</td>";
         echo "<td>".$satz["firmenname"]."</td>";
         echo "<td>".$satz["passwort"]."</td>";
-        echo "<td><a href='index.php?loeschId=".$satz["id"]."'>Löschen</a></td>";
+        echo "<td><a href='?loeschId=".$satz["id"]."'>Löschen</a></td>";
 		echo "</tr>";
 	}
 
