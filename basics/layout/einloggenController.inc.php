@@ -12,7 +12,7 @@ or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($
 // WENN ein Satz vorhanden ist DANN
 if ($satz = mysqli_fetch_array($ergebnis) ) {
     // Benutzer (Firmennamen) in Session merken
-    $_SESSION["benutzer"] = $satz["firmenname"];
+    $_SESSION["benutzer"] = $satz;
     // Seite umbiegen auf Willkommen-Seite
     $seite = "willkommen";
 // SONST
