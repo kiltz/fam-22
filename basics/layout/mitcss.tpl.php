@@ -29,8 +29,6 @@
         <?php
         }
         ?>
-        <li><a href="index.php?seite=rechne">Rechner</a></li>
-        <li><a href="index.php?seite=aufgabe">Aufgabe zum Layout</a></li>
 	</ul>
 
 </div>
