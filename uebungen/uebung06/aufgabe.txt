@@ -8,3 +8,10 @@ Vergleicht die Forderungen des Manifests mit den Grundlagen des Wasserfall- und 
 Gegen welche Vorgaben der Prozessmodelle geht das Manifest vor?
 
 Schreibt dies in eine Textdatei und schickt mir die Datei per E-Mail an f@kiltz.de.
+
+Zeit bis 10:30 Uhr
+dann Pause bis 10:45 Uhr
+
+Links:
+https://de.wikipedia.org/wiki/Spiralmodell
+https://de.wikipedia.org/wiki/Wasserfallmodell
