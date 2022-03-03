@@ -1,0 +1,25 @@
+Praxisprojekt
+=============
+
+Stand-Up-Meeting:
+----------------------------
+- Was habe ich (Gestern) getan?
+- Was will ich (Heute) tun?
+- Was behindert mich? (Abgesehen von meiner (geistigen) Potenz ;-) )
+
+Kleine Tipps:
+-------------
+SQL-Statement für Suchen des Benutzers (s. auch loginController)
+	select * from benutzer where username = '".$ben."' 
+		and passwort = password('".$pw."') 
+
+SQL-Statement für den Posteingang:
+	select n.*, b.username from nachricht as n, benutzer as b 
+		 where b.id = n.absender_id and empfaenger_id = <deineId>
+	 
+Um beim Lesen der Nachricht den Usernamen anzeigen zu lassen:
+	select n.*, b.username from nachricht as n, benutzer as b 
+		 where b.id = n.id_sender and n.id = <idDerNachricht>
+	 
+	 
+
