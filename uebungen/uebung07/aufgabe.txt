@@ -1,0 +1,36 @@
+User Story
+==========
+
+Ermittelt die UserStories bei der Nachrichtenverwaltung bei Kapiland 
+und speichert sie in diesem Verzeichnis ab.
+
+
+
+1. Nachricht schreiben.
+
+2. Posteingang zeigen
+
+3. Nachricht lesen
+
+---------------------
+
+4. Nachricht löschen
+
+5. Postausgang anzeigen
+
+6. Nachricht suchen
+
+7. Nachrichten hübsch machen
+
+----------------------
+
+Mehrere Nachrichten löschen
+
+Zentrale Anzeige neuer Nachrichten
+
+Nutzer ignorieren
+
+Zusatz:
+- Bildet Teams mit 2 - 3 Pers.
+- sucht euch ein Kanban-Tool aus.
+
