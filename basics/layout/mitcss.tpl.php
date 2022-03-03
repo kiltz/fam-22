@@ -19,7 +19,8 @@
         <?php
         if (isset($_SESSION["benutzer"])) {
             ?>
-            <li><a href="index.php?seite=benutzer">Benutzerverwaltung</a></li>
+            <li><a href="index.php?seite=ben/index">Benutzerverwaltung</a></li>
+            <li><a href="index.php?seite=nachricht/eingang">Nachrichten</a></li>
             <li><a href="index.php?seite=logout">Logout</a></li>
 
             <?php

@@ -11,6 +11,6 @@ if (isset($_REQUEST["loeschId"])) {
     $meldung = "Benutzer mit ID $loeschId wurde gelöscht!";
 }
 $seite = "benutzer";
-include("benutzerController.inc.php");
+include("indexController.inc.php");
 
 ?>
