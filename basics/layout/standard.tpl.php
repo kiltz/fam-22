@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <html>
 <head>
-    <title>Kiltzens WebApp</title>
+    <title>Lauras WebPage</title>
     <link rel="STYLESHEET" type="text/css" href="formate.css">
 </head>
 <body>
@@ -10,17 +10,21 @@
 
 <table cellpadding="3">
     <tr height="100">
-        <td width="150"><img src="logo.gif"></td>
-        <td width="850">Kiltzens WebApp</td>
+        <td width="150"><img src="ezgif-5-0a17973100.jpg"></td>
+        <td width="1000">Lauras WebPage</td>
     </tr>
     <tr height="450">
         <td>
-            <h3>Menue</h3>
+            <h3>Menü</h3>
             <ul>
-                <li><a href="index.php?seite=eins">Eins</a></li>
-                <li><a href="index.php?seite=zwei">Zwei</a></li>
-                <li><a href="index.php?seite=rechne">Rechner</a></li>
-                <li><a href="index.php?seite=aufgabe">Aufgabe zum Layout</a></li>
+                <!-- <li><a href="index.php?seite=eins">Eins</a></li>
+                <li><a href="index.php?seite=zwei">Zwei</a></li> -->
+                <!-- <li><a href="index.php?seite=rechne">Rechner</a></li> -->
+                <li><a href="index.php?seite=lager">Lagerverkauf</a></li>
+                <!-- <li><a href="index.php?seite=aufgabe">Aufgabe zum Layout</a></li> -->
+                <li><a href="index.php?seite=nachrichtschreiben">Nachricht schreiben</a></li>
+                <li><a href="index.php?seite=postausgang">Postausgang</a></li>
+
 
             </ul>
         </td>
