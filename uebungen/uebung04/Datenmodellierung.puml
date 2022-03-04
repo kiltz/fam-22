@@ -1,0 +1,52 @@
+@startuml
+class Benutzer {
+    string firmenname
+    double bargeld
+    double festkapital
+    string level
+    string hauptsitz
+}
+
+class Nachricht {
+    string absender
+    string datum
+    string uhrzeit
+    string betreff
+    string text
+}
+
+class Vertrag {
+    int vertragsnummer
+    string absender
+    string empfänger
+    string text
+}
+
+class Kontoauszug {
+    int nummer
+    string beschreibung
+    double betrag
+    string datum
+}
+
+class Lager {
+    int anzahl
+    string ware
+    int qualität
+    double einzelpreis
+}
+
+class Ware {
+    string name
+    string produzieren
+    string verkaufen
+    string erforschen
+}
+
+Benutzer <|-- Nachricht
+Benutzer <|-- Vertrag
+Benutzer <|-- Kontoauszug
+Benutzer <|-- Lager
+Lager <|-- Ware
+
+@enduml

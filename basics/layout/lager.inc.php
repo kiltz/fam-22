@@ -1,113 +1,45 @@
 <?php
-// session_start();
-// Ausgangslage
-if (!isset($_SESSION["stahl"]) || isset($_REQUEST["reset"])) {
-    $_SESSION["stahl"] = 1000;
-    $_SESSION["geld"] = 5000;
+$lagerBestand = 1000;
+$bargeld = 5000;
+if (isset($_SESSION["lagerBestand"])) {
+    $lagerBestand = $_SESSION["lagerBestand"];
+    $bargeld = $_SESSION["bargeld"];
 }
+if (isset($_REQUEST["menge"])) {
+    // TODO Menge prüfen (nicht 0 und nicht mehr als man hat)
+    // TODO Preis prüfen ( nicht 0 nicht mehr wie 135)
+    // TODO Provision prüfen (nicht mehr wie Bargeld)
 
-
-// BasisVariablen
-$_MAX_PREIS = 136;
-$geld = $_SESSION["geld"];
-$stahl = $_SESSION["stahl"];
-$meldung = "";
-$fehlerMeldung = "";
-$verkaufsFormClass = "zeige";
-$bestaetigeFormClass = "verstecke";
-$verkaufAnzahl = $einzelpreis = $provision = 0;
-
-// wenn Verkaufsformular abgschickt wird
-if (isset($_POST["aktion"])) {
-    $aktion = $_POST["aktion"];
-    $verkaufAnzahl = $_POST["verkaufAnzahl"];
-    $einzelpreis = $_POST["einzelpreis"];
-    $provision = $verkaufAnzahl * $einzelpreis / 10;
-    // 1. Schritt: Verkaufen
-    if ($aktion == "verkauf") {
-
-        if ($verkaufAnzahl * 1 == 0 or $einzelpreis * 1 == 0 ) {
-            $fehlerMeldung .= "Anzahl oder Preis ist 0! Nichts zu tun...<br/>";
-        }
-        if ($provision > $geld) {
-            $fehlerMeldung .= "Du hast nicht genug Geld für die Provision!<br/>";
-        }
-        if ($verkaufAnzahl < 0) {
-            $fehlerMeldung .= "Du kannst keine negative Anzahl Waren verkaufen!<br/>";
-        }
-        if ($einzelpreis > $_MAX_PREIS) {
-            $fehlerMeldung .= "Du bist zu Teuer!<br/>";
-        }
-        // Alles ok?
-        if ($fehlerMeldung == "") {
-            $verkaufsFormClass = "verstecke";
-            $bestaetigeFormClass = "zeige";
-        }
-    }
-    // 2. Schritt: Bestätigen
-    if ($aktion == "bestaetige") {
-        $geld = $geld - $provision + ($verkaufAnzahl * $einzelpreis);
-        $stahl -= $verkaufAnzahl;
-        $_SESSION["stahl"] = $stahl;
-        $_SESSION["geld"] = $geld;
-        $verkaufAnzahl = 0;
-        $einzelpreis = 0;
-        $meldung = "Die Waren wurden verkauft und das Geld gut geschrieben!";
-    }
+    $lagerBestand = $lagerBestand - $_REQUEST["menge"];
+    $bargeld = $bargeld + ($_REQUEST["menge"] * $_REQUEST["preis"]);
+    $_SESSION["lagerBestand"] = $lagerBestand;
+    $_SESSION["bargeld"] = $bargeld;
 }
-
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="STYLESHEET" type="text/css" href="formate.css">
-    <title>Lagerverkauf</title>
+    <title>Lagerbestand</title>
+    <link rel="STYLESHEET" type="text/css" href="../include/formate.css">
 </head>
 <body>
-<h2>Lagerverkauf</h2>
-<div id="info">
-    <h3>Bestände</h3>
-    Du hast:
-    <ul>
-        <li><?= $geld ?> EUR</li>
-        <li><?= $stahl ?> t Stahl</li>
-    </ul>
+<h2>Lagerbestand</h2>
+LagerBestand: <?php echo $lagerBestand ?> <br/>
+Bargeld:  <?php echo $bargeld ?> <br/>
 
-</div>
-<div id="verkauf" class="<?= $verkaufsFormClass ?>">
-    <h3>Verkaufen</h3>
-    <form method="POST">
-        <input type="hidden" name="aktion" value="verkauf"/>
-        <input type="text" size="10" name="verkaufAnzahl" value="<?= $verkaufAnzahl ?>"/> t Stahl
-        zu
-        <input type="text" size="10" name="einzelpreis" value="<?= $einzelpreis ?>"/> EUR / t.
+<form method="post">
+    <label>
+        Menge
+        <input type="text" name="menge"/>
+    </label>
+    <br/>
+    <label>
+        Preis
+        <input type="text" name="preis"/>
+    </label>
+    <input type="submit" value="verkaufen"/>
+</form>
 
-        <input type="submit" value=" verkaufe "/>
-    </form>
-</div>
-<div id="bestaetige" class="<?= $bestaetigeFormClass ?>">
-    <h3>Bestätigung</h3>
-    <form method="POST">
-        <input type="hidden" name="aktion" value="bestaetige"/>
-        <input type="hidden" size="10" name="verkaufAnzahl" value="<?= $verkaufAnzahl ?>"/>
-        <input type="hidden" size="10" name="einzelpreis" value="<?= $einzelpreis ?>"/>
 
-        Du möchtest <?= $verkaufAnzahl ?> t Stahl zu <?= $einzelpreis ?> EUR / t verkaufen?
-        <p>
-            Die Verkaufsprovision beträgt <?= $provision ?> EUR.
-        </p>
-        <input type="submit" value="Ja, ich will!"/>
-        <a href="#">Nö, lieber doch nicht...</a>
-    </form>
-</div>
-<div id="meldungen">
-    <div class="rot"><?= $fehlerMeldung ?></div>
-    <div class="dunkelblau"><?= $meldung ?></div>
-
-</div>
-
-<a href="lager.inc.php?reset=true">Reset</a>
 </body>
 </html>
-

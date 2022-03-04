@@ -13,3 +13,4 @@ Exportiere das Diagramm als Bild (<name>.png) und schicke es an f@kiltz.de
 
 Vergleiche die beiden Darstellungsformen und schreibe unter den Pseudocode eine 
 kurze Vor- und Nachteil-Liste.
+

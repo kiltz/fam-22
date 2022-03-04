@@ -1,1 +1,1 @@
-Willkommen <?php echo $_SESSION["benutzer"]["firmenname"] ?>!
+Willkommen <?php echo $_SESSION["benutzer"] ?>!

@@ -15,10 +15,6 @@
 $verbNr = mysqli_connect("localhost", "root", "", "kapi") or // wenns nicht klappt
 die("<H2>Verbindung zum SQL-Server konnte nicht hergestellt werden!</H2>" . mysqli_error($verbNr));
 
-$sql = "select * from `nachricht`";
-$ergebnis = @mysqli_query($verbNr, $sql )
-or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
-
 /*
 // 1. Verbindung zur DB herstellen
 $verbNr = mysqli_connect("localhost", "root", "", "kapi") or // wenns nicht klappt
@@ -37,11 +33,16 @@ include("indexController.inc.php");
 
 if (isset($_REQUEST["loeschId"])) {
     $loeschId = $_REQUEST["loeschId"] * 1;
-    $sql = "DELETE FROM `nachricht` WHERE `id`" . $loeschId;
+    $sql = "DELETE FROM nachricht WHERE id = ".$loeschId;
     $ergebnis = @mysqli_query($verbNr, $sql)
     or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
     $meldung = "Nachricht wurde gelöscht!";
 }
+
+$sql = "select * from `nachricht`";
+$ergebnis = @mysqli_query($verbNr, $sql )
+or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
+
 
 // Solange noch Sätze da sind
 while ($satz = mysqli_fetch_array($ergebnis) ) {
@@ -51,7 +52,7 @@ while ($satz = mysqli_fetch_array($ergebnis) ) {
     // gebe den Namen aus
     echo "<td>".$satz["betreff"]."</td>";
     echo "<td>".$satz["text"]."</td>";
-    echo "<td><a href='postausgang.inc.php?loeschId=".$satz["id"]."'>Löschen</a></td>";
+    echo "<td><a href='index.php?seite=postausgang&loeschId=".$satz["id"]."'>Löschen</a></td>";
     echo "</tr>";
 }
 ?>
