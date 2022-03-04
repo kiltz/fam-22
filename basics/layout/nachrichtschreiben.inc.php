@@ -1,5 +1,7 @@
 <h2>Nachricht schreiben</h2>
 
+<p><a href="index.php?seite=nachrichtschreiben">Neue Nachricht schreiben</a></p>
+
 <?php
 $empfaenger = "";
 $betreff = "";
@@ -25,10 +27,7 @@ if (isset($_REQUEST["empfaenger"])) {
     // alles ausgefüllt?
     if ($empfaenger == "") {
         $meldung .= "<br/>Empfänger ist ein Pflichtfeld";
-    } else {
-        //ToDo Empfängerüberprüfung
     }
-
     if ($betreff == "") {
         $meldung .= "<br/>Betreff ist ein Pflichtfeld";
     }
@@ -90,11 +89,3 @@ or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($
     <div class="gruen">
        <i><?php echo $erfolg ?></i>
     </div>
-
-
-<p><a href="index.php?seite=nachrichtschreiben">Neue Nachricht schreiben</a></p>
-<!--<p><a href="index.php?seite=postausgang">Postausgang</a></p>-->
-
-
-</body>
-</html>

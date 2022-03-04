@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <html>
 <head>
-    <title>Lauras WebPage</title>
+    <title>Laura&Lana WebPage</title>
     <link rel="STYLESHEET" type="text/css" href="formate2.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <tr height="100">
          <td width="150"><img src="ezgif-1-d1ae2d93f8.jpg"></td>
         <!--<td width="150"><img src="ezgif-5-0a17973100.jpg"></td>-->
-        <td width="1000">Lauras WebPage</td>
+        <td width="1000">Laura&Lana WebPage</td>
     </tr>
     <tr height="450">
         <td>
