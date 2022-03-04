@@ -8,7 +8,7 @@ Beziehungen zueinander.
 
 Beachte dabei die ersten drei Normalformen.
 
-s. auch https://plantuml.com/de/class-diagram
+s. auch https://plantuml.com/de/class-diagramf
 
 
 Aufgabe: produzierende Gebäude

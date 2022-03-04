@@ -6,9 +6,9 @@ und speichert sie in diesem Verzeichnis ab.
 
 
 
-1. Nachricht schreiben.
+1. Nachricht schreiben. LanaLaura
 
-2. Posteingang zeigen
+2. Posteingang zeigen LanaLaura (optional)
 
 3. Nachricht lesen
 

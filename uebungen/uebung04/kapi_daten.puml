@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Benutzer {
+Firmenname
+}
+
+class Lager {
+Ware
+Qualität
+Einzelpreis
+}
+
+class Plantage{
+Baumwolle
+Getreide
+Holz
+Kaffeebohnen
+Kakao
+}
+
+class Obstplantage {
+Äpfel
+Birnen
+Bananen
+Erdbeeren
+Orangen
+}
+
+class Markt {
+Benzin
+Shampoo
+Autos
+Eier
+Saatgut
+}
+
+Benutzer  *-- Lager
+Lager *-- Plantage
+Lager *-- Obstplantage
+Lager *-- Markt
+@enduml

@@ -4,9 +4,6 @@ $username = "";
 $email = "";
 $fehlermeldung = "";
 $meldung = "";
-$verbNr = mysqli_connect("localhost", "root", "", "kapi") or // wenns nicht klappt
-die("<H2>Verbindung zum SQL-Server konnte nicht hergestellt werden!</H2>" . mysqli_error($verbNr));
-// beende die Verabeitung mit der Fehlermeldung (die = stirb - Beenden der Verarbeitung)
 // Aufruf per Formular?
 if (isset($_REQUEST["username"])) {
     // Übergabe der Werte
@@ -24,6 +21,9 @@ if (isset($_REQUEST["username"])) {
         // speichern
         // 1. Verbindung zur DB herstellen
 
+        $verbNr = mysqli_connect("localhost", "root", "", "kapi") or // wenns nicht klappt
+        die("<H2>Verbindung zum SQL-Server konnte nicht hergestellt werden!</H2>" . mysqli_error($verbNr));
+        // beende die Verabeitung mit der Fehlermeldung (die = stirb - Beenden der Verarbeitung)
 
         $sql = "insert into benutzer (username, email) values ('$username','$email');";
         $ergebnis = @mysqli_query($verbNr, $sql)
@@ -34,19 +34,19 @@ if (isset($_REQUEST["username"])) {
 
         $meldung = "Benutzer $username wurde gespeichert!";
 
+        $sql = "SELECT * FROM benutzer";
+
+        $ergebnis = @mysqli_query($verbNr, $sql)
+        or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
     }
 
 }
-$sql = "SELECT * FROM benutzer";
-
-$ergebnis = @mysqli_query($verbNr, $sql)
-or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
 ?>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Benutzerverwaltung</title>
-    <link rel="STYLESHEET" type="text/css" href="../../include/
+    <link rel="STYLESHEET" type="text/css" href="../include/
 		formate.css">
 </head>
 <body>
@@ -79,7 +79,7 @@ or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($
 <?php
 if (isset($ergebnis)) {
     ?>
-    <table>
+    <table cellpadding="3">
         <tr>
             <th>ID</th>
             <th>Username</th>
@@ -95,7 +95,6 @@ if (isset($ergebnis)) {
             // gebe den Namen aus
             echo "<td>" . $satz["username"] . "</td>";
             echo "<td>" . $satz["email"] . "</td>";
-            echo "<td>" . $satz["vorname"] . "</td>";
             echo "</tr>";
         }
 

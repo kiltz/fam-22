@@ -20,6 +20,6 @@
 	
 	
 	
-//include("standard.tpl.php");
-include("mitcss.tpl.php");
+include("standard.tpl.php");
+//include("mitcss.tpl.php");
 ?>

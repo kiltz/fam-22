@@ -24,5 +24,3 @@ Quelltext:
 	}
 	
 3. Vergleiche die vier Ergebnisse und beschreibe die Vor- und Nachteile.	
-
-

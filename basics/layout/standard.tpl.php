@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Lauras WebPage</title>
-    <link rel="STYLESHEET" type="text/css" href="formate.css">
+    <link rel="STYLESHEET" type="text/css" href="formate2.css">
 </head>
 <body>
 <script src="../include/jquery-3.3.1.js">
@@ -10,7 +10,8 @@
 
 <table cellpadding="3">
     <tr height="100">
-        <td width="150"><img src="ezgif-5-0a17973100.jpg"></td>
+         <td width="150"><img src="ezgif-1-d1ae2d93f8.jpg"></td>
+        <!--<td width="150"><img src="ezgif-5-0a17973100.jpg"></td>-->
         <td width="1000">Lauras WebPage</td>
     </tr>
     <tr height="450">
@@ -24,6 +25,7 @@
                 <!-- <li><a href="index.php?seite=aufgabe">Aufgabe zum Layout</a></li> -->
                 <li><a href="index.php?seite=nachrichtschreiben">Nachricht schreiben</a></li>
                 <li><a href="index.php?seite=postausgang">Postausgang</a></li>
+                <p><a href="index.php">ausloggen</a></p>
 
 
             </ul>
