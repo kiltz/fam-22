@@ -130,7 +130,8 @@ td  {
 .klein  {
 	font-size : 8pt;
 	font-family : Verdana,Arial,Helvetica,Sans-serif;
-	text-align : right;
+	/*text-align : left;*/
+	font-style: italic;
 	color : #000000;
 }
 

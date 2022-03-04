@@ -1,5 +1,3 @@
-
-
 <h2>Nachricht schreiben</h2>
 
 <?php
@@ -11,9 +9,9 @@ $meldung = "";
 
 // Ausgangslage
 if (isset($_REQUEST["reset"])) {
-$_SESSION["empfaenger"] = "";
-$_SESSION["betreff"] = "";
-$_SESSION["inhalt"] = "";
+    $_SESSION["empfaenger"] = "";
+    $_SESSION["betreff"] = "";
+    $_SESSION["inhalt"] = "";
 }
 
 $verbNr = mysqli_connect("localhost", "root", "", "kapi") or // wenns nicht klappt
@@ -27,8 +25,7 @@ if (isset($_REQUEST["empfaenger"])) {
     // alles ausgefüllt?
     if ($empfaenger == "") {
         $meldung .= "<br/>Empfänger ist ein Pflichtfeld";
-    }
-    else{
+    } else {
         //ToDo Empfängerüberprüfung
     }
 
@@ -42,15 +39,19 @@ if (isset($_REQUEST["empfaenger"])) {
         // speichern
         $sql = "insert into nachricht (empfaenger_id, betreff, text)
                   values ('$empfaenger','$betreff', '$inhalt');";
-        $ergebnis = @mysqli_query($verbNr, $sql )
+        $ergebnis = @mysqli_query($verbNr, $sql)
         or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
 
-        $erfolg = "nachricht gesendet";
+        $erfolg = "Nachricht gesendet";
         $empfaenger = "";
         $betreff = "";
         $inhalt = "";
     }
 }
+
+$sql = "SELECT id, firmenname FROM benutzer where firmenname != ''";
+$ergebnis = @mysqli_query($verbNr, $sql)
+or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
 
 ?>
 
@@ -58,7 +59,17 @@ if (isset($_REQUEST["empfaenger"])) {
     <table>
         <tr>
             <td>Empfänger</td>
-            <td><input type="text" size="40" name="empfaenger" value="<?php echo $empfaenger ?>"/></td>
+            <td>
+                <select name="empfaenger">
+                    <?php
+                    while ($satz = mysqli_fetch_array($ergebnis)) {
+                        echo "<option value='" . $satz["id"] . "'>";
+                        echo $satz["firmenname"];
+                        echo "</option>";
+                    }
+                    ?>
+                </select>
+            </td>
         </tr>
         <tr>
             <td>Betreff</td>
@@ -70,19 +81,19 @@ if (isset($_REQUEST["empfaenger"])) {
         </tr>
     </table>
 
-    <input type="submit" class = "Button" value=" absenden "/>
+    <input type="submit" class="Button" value=" absenden "/>
 
 </form>
 <div class="rot">
-    <?php echo $meldung ?>
+    <i><?php echo $meldung ?></i>
 </div>
+    <div class="gruen">
+       <i><?php echo $erfolg ?></i>
+    </div>
 
-<div class="gruen">
-    <?php echo $erfolg ?>
-</div>
 
 <p><a href="index.php?seite=nachrichtschreiben">Neue Nachricht schreiben</a></p>
-<p><a href="index.php?seite=postausgang">Postausgang</a></p>
+<!--<p><a href="index.php?seite=postausgang">Postausgang</a></p>-->
 
 
 </body>

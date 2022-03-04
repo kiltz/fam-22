@@ -34,6 +34,9 @@ if (isset($_REQUEST["username"])) {
 	if ($email == "") {
 		$fehlermeldung .= "E-Mail fehlt!<br/>";
 	}
+    if ($firmenname == "") {
+        $fehlermeldung .= "Firmenname fehlt!<br/>";
+    }
 	// Wenn alles ok
 	if ($fehlermeldung == "") {
 		// speichern
