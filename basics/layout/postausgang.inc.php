@@ -40,7 +40,7 @@ if (isset($_REQUEST["loeschId"])) {
     $sql = "DELETE FROM `nachricht`" . $loeschId;
     $ergebnis = @mysqli_query($verbNr, $sql)
     or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
-    $meldung = "Benutzer mit ID $loeschId wurde gelöscht!";
+    $meldung = "Nachricht wurde gelöscht!";
 }
 
 // Solange noch Sätze da sind
@@ -51,13 +51,9 @@ while ($satz = mysqli_fetch_array($ergebnis) ) {
     // gebe den Namen aus
     echo "<td>".$satz["betreff"]."</td>";
     echo "<td>".$satz["text"]."</td>";
-    echo "<td><a href='?loeschId=".$satz["id"]."'>Löschen</a></td>";
+    echo "<td><a href='postausgang.inc.php?loeschId=".$satz["id"]."'>Löschen</a></td>";
     echo "</tr>";
 }
-
-
 ?>
-
-
 
 <p><a href="index.php?seite=nachrichtschreiben">Zurück zu Nachricht schreiben</a></p>
