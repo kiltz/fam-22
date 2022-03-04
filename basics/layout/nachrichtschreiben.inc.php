@@ -1,11 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Nachricht schreiben</title>
-    <link rel="STYLESHEET" type="text/css" href="../include/formate2.css">
-</head>
-<body>
+
 
 <h2>Nachricht schreiben</h2>
 
@@ -78,7 +71,6 @@ if (isset($_REQUEST["empfaenger"])) {
     </table>
 
     <input type="submit" class = "Button" value=" absenden "/>
-    <input type="reset" class = "Button" value="alles löschen" />
 
 </form>
 <div class="rot">
@@ -89,9 +81,9 @@ if (isset($_REQUEST["empfaenger"])) {
     <?php echo $erfolg ?>
 </div>
 
-<p><a href="index.php?seite=nachrichtschreiben">reset</a></p>
+<p><a href="index.php?seite=nachrichtschreiben">Neue Nachricht schreiben</a></p>
 <p><a href="index.php?seite=postausgang">Postausgang</a></p>
-<p><a href="index.php">ausloggen</a></p>
+
 
 </body>
 </html>
