@@ -37,7 +37,7 @@ include("indexController.inc.php");
 
 if (isset($_REQUEST["loeschId"])) {
     $loeschId = $_REQUEST["loeschId"] * 1;
-    $sql = "DELETE FROM `nachricht`" . $loeschId;
+    $sql = "DELETE FROM `nachricht` WHERE `id`" . $loeschId;
     $ergebnis = @mysqli_query($verbNr, $sql)
     or die("<H2>Fehler bei der Abfrage</H2><pre>" . $sql . "</pre>" . mysqli_error($verbNr));
     $meldung = "Nachricht wurde gelöscht!";
